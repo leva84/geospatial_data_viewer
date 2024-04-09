@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: geospatial_data_viewer_development
+  username: postgres
+  password: password
+
+test:
+  <<: *default
+  database: geospatial_data_viewer_test
+  username: postgres
+  password: password_test
+
+production:
+  <<: *default
+  database: geospatial_data_viewer_production
+  username: geospatial_data_viewer
+  password: <%= ENV["DATABASE_PASSWORD"] %>
