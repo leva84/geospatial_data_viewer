@@ -10,8 +10,11 @@ gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
 gem 'activerecord-postgis-adapter'
 gem 'bootsnap', require: false
+gem 'bootstrap', '~> 5.3.2'
+gem 'dartsass-sprockets', '~> 3.0'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jquery-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rubocop', require: false
