@@ -1,2 +1,31 @@
-h1 Tickets#index
-p Find me in app/views/tickets/index.html.erb
+.row
+  .col-md-12.text-center.pt-3
+    .page-header
+      h2= 'Tickets'
+
+hr
+
+.row
+  .col-md-12.text-center
+    table.table.table-bordered.table-sm.table-striped
+      thead.thead-default
+        tr
+          th= '№'
+          th= Ticket.human_attribute_name(:id)
+          th= Ticket.human_attribute_name(:request_number)
+          th= Ticket.human_attribute_name(:request_type)
+          th= Ticket.human_attribute_name(:request_action)
+          th= Ticket.human_attribute_name(:response_due_date_time)
+          th=
+
+      tbody
+        - @tickets.each_with_index do |ticket, i|
+          tr
+            td= i + 1
+            td= ticket.id
+            td= ticket.request_number
+            td= ticket.request_type
+            td= ticket.request_action
+            td= ticket.response_due_date_time
+            td= link_to ticket_path(ticket), class: 'btn btn-link' do
+              span.bi.bi-eye
