@@ -15,6 +15,7 @@ gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rubocop', require: false
+gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
