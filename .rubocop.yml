@@ -24,6 +24,8 @@ Metrics/MethodLength:
   Max: 15
 
 # Style
+Style/ClassAndModuleChildren:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/HashSyntax:

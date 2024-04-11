@@ -9,7 +9,7 @@ FactoryBot.define do
     response_due_date_time { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     primary_service_area_code { Faker::Alphanumeric.alphanumeric(number: 7) }
     additional_service_area_codes { [Faker::Alphanumeric.alphanumeric(number: 7)] }
-    well_known_text { File.read("#{ Rails.root }/spec/data/well_known_text_data.txt").chomp }
+    well_known_text { File.read("#{ Rails.root }/spec/fixtures/well_known_text_data.txt").chomp }
     excavator { association :excavator, ticket: instance }
   end
 end
