@@ -1,2 +1,7 @@
 @import 'bootstrap';
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+#map {
+  height: 380px;
+}
