@@ -1,0 +1,23 @@
+.card
+   .card-header
+      h3.card-title Excavator Information
+   .card-body
+      .row
+         .col-md-6
+            p
+               strong = 'Ticket ID: '
+               = @excavator.id
+            p
+               strong = 'Company_Name: '
+               = @excavator.company_name
+            p
+               strong = 'Address: '
+               = @excavator.address
+            p
+               strong = 'Crew On Site: '
+               - if @excavator.crew_on_site
+                  span.text-success
+                     i.bi.bi-check2-circle
+               - else
+                  span.text-danger
+                     i.bi.bi-x-circle

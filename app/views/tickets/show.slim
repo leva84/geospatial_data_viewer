@@ -1,43 +1,16 @@
 .row
   .col-md-12.text-center.pt-3
-    .page-header
-      h2= 'Ticket Details'
+    h2= 'Ticket Details'
 
 hr
 
-.row
+.row.mt-3
   .col-md-12
-    .card
-      .card-header
-        h3.card-title Ticket Information
-      .card-body
-        .row
-          .col-md-6
-            p
-              strong Ticket ID:
-              = @ticket.id
-            p
-              strong Request Number:
-              = @ticket.request_number
-            p
-              strong Sequence Number:
-              = @ticket.sequence_number
-            p
-              strong Request Type:
-              = @ticket.request_type
-          .col-md-6
-            p
-              strong Request Action:
-              = @ticket.request_action
-            p
-              strong Response Due Date Time:
-              = @ticket.response_due_date_time
-            p
-              strong Primary Service Area Code:
-              = @ticket.primary_service_area_code
-            p
-              strong Additional Service Area Codes:
-              = @ticket.additional_service_area_codes
+    = render 'ticket'
+
+.row.mt-3
+  .col-md-12
+    = render 'excavator'
 
 .row
   .col-md-12.pt-3

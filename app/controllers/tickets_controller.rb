@@ -7,5 +7,6 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    @excavator = @ticket.excavator
   end
 end
