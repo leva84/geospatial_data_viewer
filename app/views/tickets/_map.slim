@@ -7,13 +7,13 @@
         div id='map'
 
 javascript:
- var map = L.map('map').setView(#{ wkt.centroid.coordinates }, 12);
+  var map = L.map('map').setView(#{ wkt.centroid.coordinates }, 12);
 
- L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-   maxZoom: 18,
-   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
- }).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
 
- var polygon = L.polygon([
-   #{ wkt.coordinates }
- ]).addTo(map);
+  var polygon = L.polygon([
+    #{ wkt.coordinates }
+  ]).addTo(map);
