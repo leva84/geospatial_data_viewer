@@ -1,0 +1,21 @@
+.row
+  .col-md-12.text-center.pt-3
+    h2= 'Ticket Details'
+
+hr
+
+.row.mt-3
+  .col-md-12
+    = render 'ticket'
+
+.row.mt-3
+  .col-md-12
+    = render 'excavator'
+
+.row.mt-3
+  .col-md-12
+    = render 'map'
+
+.row
+  .col-md-12.mt-3.mb-3
+    = link_to 'Back', root_path, class: 'btn btn-secondary'
