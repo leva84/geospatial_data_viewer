@@ -23,6 +23,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 Capybara.server = :puma, { Silent: true }
+# Capybara.default_driver = :selenium
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
