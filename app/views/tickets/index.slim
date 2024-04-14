@@ -20,7 +20,7 @@ hr
       tbody
         - @tickets.each_with_index do |ticket, i|
           tr
-            td= i + 1
+            td= row_number(i)
             td= ticket.id
             td= ticket.request_number
             td= ticket.request_type
@@ -28,3 +28,5 @@ hr
             td= ticket.response_due_date_time
             td= link_to ticket_path(ticket), class: 'btn btn-link' do
               span.text-secondary.bi.bi-eye
+
+  = paginate_tickets @tickets
