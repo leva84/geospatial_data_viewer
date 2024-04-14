@@ -1,31 +1,31 @@
 .card
   .card-header
-    h3.card-title Ticket Information
+    h3.card-title = t 'views.tickets.ticket.title'
   .card-body
     .row
       .col-md-6
         p
-          strong = 'Ticket ID: '
+          strong = "#{ ticket_attr(:id) }: "
           = @ticket.id
         p
-          strong = 'Request Number: '
+          strong = "#{ ticket_attr(:request_number) }: "
           = @ticket.request_number
         p
-          strong = 'Sequence Number: '
+          strong = "#{ ticket_attr(:sequence_number) }: "
           = @ticket.sequence_number
         p
-          strong = 'Request Type: '
+          strong = "#{ ticket_attr(:request_type) }: "
           = @ticket.request_type
       .col-md-6
         p
-          strong = 'Request Action: '
+          strong = "#{ ticket_attr(:request_action) }: "
           = @ticket.request_action
         p
-          strong = 'Response Due Date Time: '
+          strong = "#{ ticket_attr(:response_due_date_time) }: "
           = @ticket.response_due_date_time
         p
-          strong = 'Primary Service Area Code: '
+          strong = "#{ ticket_attr(:primary_service_area_code) }: "
           = @ticket.primary_service_area_code
         p
-          strong = 'Additional Service Area Codes: '
+          strong = "#{ ticket_attr(:additional_service_area_codes) }: "
           = @ticket.additional_service_area_codes

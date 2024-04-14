@@ -12,20 +12,27 @@ feature 'Show Ticket Details', type: :feature do
 
     # Проверка информации о тикете
     expect(page).to have_css('.card-title', text: 'Ticket Information')
-    expect(page).to have_css('p', text: "Ticket ID: #{ ticket.id }")
-    expect(page).to have_css('p', text: "Request Number: #{ ticket.request_number }")
-    expect(page).to have_css('p', text: "Sequence Number: #{ ticket.sequence_number }")
-    expect(page).to have_css('p', text: "Request Type: #{ ticket.request_type }")
-    expect(page).to have_css('p', text: "Request Action: #{ ticket.request_action }")
-    expect(page).to have_css('p', text: "Response Due Date Time: #{ ticket.response_due_date_time }")
-    expect(page).to have_css('p', text: "Primary Service Area Code: #{ ticket.primary_service_area_code }")
-    expect(page).to have_css('p', text: "Additional Service Area Codes: #{ ticket.additional_service_area_codes }")
+    expect(page).to have_css('p', text: "#{ Ticket.human_attribute_name(:id) }: #{ ticket.id }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:request_number) }: #{ ticket.request_number }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:sequence_number) }: #{ ticket.sequence_number }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:request_type) }: #{ ticket.request_type }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:request_action) }: #{ ticket.request_action }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:response_due_date_time) }: #{ ticket.response_due_date_time }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:primary_service_area_code) }: #{ ticket.primary_service_area_code }")
+    expect(page)
+      .to have_css('p', text: "#{ Ticket.human_attribute_name(:additional_service_area_codes) }: #{ ticket.additional_service_area_codes }")
 
     # Проверка информации об экскаваторе
     expect(page).to have_css('.card-title', text: 'Excavator Information')
-    expect(page).to have_css('p', text: "Ticket ID: #{ excavator.id }")
-    expect(page).to have_css('p', text: "Company_Name: #{ excavator.company_name }")
-    expect(page).to have_css('p', text: 'Crew On Site:')
+    expect(page).to have_css('p', text: "#{ Excavator.human_attribute_name(:id) }: #{ excavator.id }")
+    expect(page).to have_css('p', text: "#{ Excavator.human_attribute_name(:company_name) }: #{ excavator.company_name }")
+    expect(page).to have_css('p', text: "#{ Excavator.human_attribute_name(:company_name) }: ")
 
     # Проверить map
     expect(page).to have_selector('div#map')
