@@ -13,6 +13,10 @@ interface to visualize this data.
    are described below. Use Rails attribute naming conventions and appropriate data types.
 4. Add a regular controller with index and show HTML views for the tickets with excavator data.
 5. Plot DigsiteInfo->WellKnownText info on a map in the ticket show view.
+6. Create a private repo on GitHub, upload source code there and provision access to
+      vasily-nesterov
+      ildarkayumov
+7. Deploy your solution to https://render.com (free plans are available) or any other public cloud.
 
 ## Models Description
 
