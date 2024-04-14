@@ -10,11 +10,11 @@ hr
       thead
         tr
           th= '№'
-          th= Ticket.human_attribute_name(:id)
-          th= Ticket.human_attribute_name(:request_number)
-          th= Ticket.human_attribute_name(:request_type)
-          th= Ticket.human_attribute_name(:request_action)
-          th= Ticket.human_attribute_name(:response_due_date_time)
+          th= ticket_attr(:id)
+          th= ticket_attr(:request_number)
+          th= ticket_attr(:request_type)
+          th= ticket_attr(:request_action)
+          th= ticket_attr(:response_due_date_time)
           th=
 
       tbody

@@ -5,16 +5,16 @@
     .row
       .col-md-12
         p
-          strong = 'Ticket ID: '
+          strong = "#{ excavator_attr(:id) }: "
           = @excavator.id
         p
-          strong = 'Company_Name: '
+          strong = "#{ excavator_attr(:company_name) }: "
           = @excavator.company_name
         p
-          strong = 'Address: '
+          strong = "#{ excavator_attr(:address) }: "
           = @excavator.address
         p
-          strong = 'Crew On Site: '
+          strong = "#{ excavator_attr(:crew_on_site) }: "
           - if @excavator.crew_on_site
             span.text-success
               i.bi.bi-check2-circle
