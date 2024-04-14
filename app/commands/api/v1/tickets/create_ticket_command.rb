@@ -54,7 +54,7 @@ class Api::V1::Tickets::CreateTicketCommand < BaseCommand
     {
       company_name: excavator_data['CompanyName'],
       address: excavator_data['Address'],
-      crew_on_site: ActiveRecord::Type::Boolean.new.cast(excavator_data['CrewOnSite']),
+      crew_on_site: ActiveRecord::Type::Boolean.new.cast(excavator_data['CrewOnsite']),
       ticket: ticket
     }
   end

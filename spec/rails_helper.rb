@@ -8,9 +8,11 @@ require_relative '../config/environment'
 
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
+require 'capybara/rails'
+require 'capybara/rspec'
+require 'pry'
 require 'rspec/rails'
 require 'shoulda/matchers'
-require 'pry'
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 begin
@@ -19,6 +21,9 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+Capybara.server = :puma, { Silent: true }
+# Capybara.default_driver = :selenium
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
