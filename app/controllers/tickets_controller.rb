@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class TicketsController < ApplicationController
+  DEFAULT_PER_PAGE = 10
+
   def index
-    @tickets = Ticket.order(id: :desc)
+    @tickets = Ticket.order(id: :desc).page(params[:page]).per(DEFAULT_PER_PAGE)
   end
 
   def show

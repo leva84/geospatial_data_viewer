@@ -4,7 +4,8 @@ describe TicketsController, type: :controller do
   describe 'GET #index' do
     subject { get :index }
 
-    let!(:tickets) { create_list(:ticket, 5) }
+    let!(:tickets) { create_list(:ticket, 15) }
+    let(:default_per_page) { described_class::DEFAULT_PER_PAGE }
 
     it 'returns ok status' do
       expect(subject).to have_http_status(:ok)
@@ -12,12 +13,18 @@ describe TicketsController, type: :controller do
 
     it 'assigns all tickets to @tickets' do
       subject
-      expect(assigns(:tickets)).to eq(tickets.reverse)
+      expect(assigns(:tickets)).to eq(tickets.reverse.first(default_per_page))
     end
 
     it 'renders the index template' do
       subject
       expect(response).to render_template(:index)
+    end
+
+    it 'paginates @tickets' do
+      subject
+      expect(assigns(:tickets).current_page).to eq(1)
+      expect(assigns(:tickets).limit_value).to eq(default_per_page)
     end
   end
 
