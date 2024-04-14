@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Show Ticket Details', type: :feature do
   let(:ticket) { create(:ticket) }
   let(:excavator) { ticket.excavator }

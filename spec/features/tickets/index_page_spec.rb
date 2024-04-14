@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Tickets index page', type: :feature do
   let!(:tickets) { create_list(:ticket, 3) }
 
