@@ -9,6 +9,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @excavator = @ticket.excavator
 
-    raise ActiveRecord::RecordNotFound, "Couldn't find Excavator for Ticket with 'id'=#{params[:id]}" if @excavator.nil?
+    return unless @excavator.nil?
+
+    raise ActiveRecord::RecordNotFound, t('controllers.tickets.show.errors.excavator_not_found', id: params[:id])
   end
 end
