@@ -17,6 +17,4 @@ test:
 
 production:
   <<: *default
-  database: geospatial_data_viewer_production
-  username: geospatial_data_viewer
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>
