@@ -14,8 +14,8 @@ interface to visualize this data.
 4. Add a regular controller with index and show HTML views for the tickets with excavator data.
 5. Plot DigsiteInfo->WellKnownText info on a map in the ticket show view.
 6. Create a private repo on GitHub, upload source code there and provision access to
-      vasily-nesterov
-      ildarkayumov
+      [vasily-nesterov](https://github.com/vasily-nesterov)
+      [ildarkayumov](https://github.com/ildarkayumov)
 7. Deploy your solution to https://render.com (free plans are available) or any other public cloud.
 
 ## Models Description
@@ -157,3 +157,13 @@ interface to visualize this data.
   }
 }
 ```
+
+***
+
+## Usage
+
+ - The application is deployed on [Render](https://render.com) and available for use.
+ - [User Interface](https://geospatial-data-viewer.onrender.com)
+ - API endpoint: https://geospatial-data-viewer.onrender.com/api/v1/tickets?json_data={SampleJSON}
+   To use the endpoint correctly, pass a JSON object as the json_data parameter, as shown in the Sample JSON section. 
+   Validation is set up for the uniqueness of the `RequestNumber` and `SequenceNumber` parameters.
